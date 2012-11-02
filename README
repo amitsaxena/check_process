@@ -1,0 +1,11 @@
+Writing a shell script after a long time!
+
+Shell script to check whether a process is running, and in case it is not, start the process. Also has the option to force start.
+
+Plan to use it with a couple of crons, to take care of a process on a remote MAC machine that dies very often, or gets corrupted:
+
+1) One cron checks every 10 minutes, and if the process isn't running starts it.
+./check_process.sh "xyz_process" "/usr/bin/xyz_process"
+
+2) Another cron running once a day forcess the process to restart (to recover in case it stops responding).
+./check_process.sh "xyz_process" "/usr/bin/xyz_process" F
